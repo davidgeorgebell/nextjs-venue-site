@@ -8,26 +8,24 @@ export default function Home() {
         <title>Good Scran Cafe</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <div className='content-container'>
+      <header>
+        <Nav />
+      </header>
+      <div>
         <main>
-          <div className='home-grid-wrapper'>
-            <div className='home-grid-1'>
-              <span>LOGO</span>
-              <h1 className='title'>Good Scran Cafe & CO</h1>
+          <div className='hero'>
+            <div className='content-container'>
+              <h1 className='hero-title'>Good Scran Cafe</h1>
             </div>
-            <div className='home-grid-2'>
-              <Nav />
-              <div className='intro'>
-                <span className='decoration'></span>
-                <p className='intro-text'>
-                  Good Scran Cafe is an award winning co working cafe in the
-                  heart of Taipei, Taiwan.
-                </p>
-              </div>
-            </div>
-            <div className='home-grid-3'>
-              <img className='home-image' src='/cafe.jpg' alt='Cafe' />
+          </div>
+
+          <div className='intro'>
+            <div className='content-container'>
+              <h3> An award winning coffee co working space</h3>
+              <p className='intro-text'>
+                A coffee shop that doesn't actually exist and is in fact a
+                portfolio project.
+              </p>
             </div>
           </div>
         </main>
