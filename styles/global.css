@@ -34,7 +34,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: var(--font-plain);
+  font-family: var(--font-fancy);
   color: var(--fg-bravo);
   background: var(--bg);
 }
@@ -77,12 +77,11 @@ h1,
 h2,
 h3,
 h4 {
-  margin-top: var(--flow-mid);
-  margin-bottom: var(--flow-space);
+  margin: 0;
 }
 
 p {
-  margin-bottom: var(--flow-space);
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -195,7 +194,82 @@ a {
 }
 
 .content-container {
-  max-width: 60rem;
+  max-width: 80rem;
   margin: 0 auto;
-  padding: var(--flow-space);
+  padding: 0;
+}
+
+/* Home Page */
+
+.home-grid-wrapper {
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  display: grid;
+  grid-template-areas:
+    'grid-1 grid-2'
+    'grid-3 grid-3';
+}
+.home-grid-1 {
+  grid-area: grid-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  background: var(--bg);
+  padding-top: var(--flow-space);
+  padding-bottom: var(--flow-mid);
+  padding-left: var(--flow-mid);
+  padding-right: var(--flow-mid);
+  color: var(--fg-bravo);
+}
+.home-grid-2 {
+  grid-area: grid-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  background: var(--bg-bravo);
+  padding-top: var(--flow-space);
+  padding-bottom: var(--flow-mid);
+  padding-left: var(--flow-mid);
+  padding-right: var(--flow-mid);
+  color: var(--fg);
+}
+.intro {
+  display: grid;
+  grid-template-rows: 1fr 5px 1fr;
+}
+.decoration {
+  background: var(--fg);
+  grid-row: 2;
+  width: 8rem;
+}
+.intro-text {
+  grid-row: 3;
+  justify-self: end;
+  margin-top: var(--flow-space);
+}
+
+.home-grid-3 {
+  grid-area: grid-3;
+  /* background-image: url('/cafe.jpg');
+  background-size: cover;
+  background-position: top;
+  min-height: 100%; */
+}
+.home-image {
+  object-fit: cover;
+  height: 50vh;
+  width: 100vw;
+}
+
+/* Nav */
+
+.nav-list {
+  grid-area: grid-2;
+  display: flex;
+  justify-content: space-evenly;
+  grid-row: 1;
 }
