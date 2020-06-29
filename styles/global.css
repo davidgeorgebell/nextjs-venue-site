@@ -1,0 +1,201 @@
+:root {
+  --font-plain: Arial, 'Helvetica', sans-serif;
+  --font-fancy: Georgia, serif;
+  --font-mono: menlo, Monaco, monospace;
+  --bg: #d9d5cf;
+  --bg-bravo: #c7a575;
+  --fg: #ffffff;
+  --fg-bravo: #4a4035;
+  --accents-1: #111111;
+  --accents-2: #333333;
+  --accents-3: #444444;
+  --accents-4: #666666;
+  --accents-5: #888888;
+  --accents-6: #999999;
+  --accents-7: #eaeaea;
+  --accents-8: #fafafa;
+  --foxtrot: #dec1ab;
+  --alpha: #e0caac;
+  --radius: 8px;
+  --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
+  --transition1s: all 100ms ease-in-out;
+  --transition2s: all 200ms ease-in-out;
+  --flow-space: 1.75rem;
+  --flow-mid: 3.5rem;
+  --flow-large: 5rem;
+  --flow-massive: 10rem;
+}
+
+/* Set core body defaults */
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--font-plain);
+  color: var(--fg-bravo);
+  background: var(--bg);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: -0.5px;
+  color: var(--fg-bravo);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+ol[class],
+li,
+ul,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: var(--flow-mid);
+  margin-bottom: var(--flow-space);
+}
+
+p {
+  margin-bottom: var(--flow-space);
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+  margin-bottom: var(--flow-space);
+}
+
+/* A elements that don’t have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  /* color: var(--fg); */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+::selection {
+  background-color: var(--fg-bravo);
+  color: var(--fg);
+}
+time {
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+hr {
+  margin: var(--flow-mid) 0;
+}
+
+blockquote {
+  margin-left: -1.75rem;
+  margin-right: var(--flow-space);
+  margin-top: var(--flow-space);
+  padding-bottom: 0;
+  padding-left: 1.42188rem;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: var(--flow-space);
+  font-size: 1.6rem;
+  line-height: 1.75rem;
+  color: var(--accents-7);
+  font-style: italic;
+  border-left: 0.3rem solid var(--foxtrot);
+}
+
+/* ------ Responsive Type ---------- */
+
+@media (min-width: 640px) {
+  body {
+    font-size: 17px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+/* App styles */
+
+footer {
+  max-width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+.content-container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--flow-space);
+}
