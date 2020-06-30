@@ -49,8 +49,8 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: var(--font-plain);
-  color: var(--accents-6);
-  background: var(--bg-darkish);
+  color: var(--accents-1);
+  background: var(--fg);
 }
 h1,
 h2,
@@ -59,7 +59,7 @@ h4,
 h5,
 h6 {
   letter-spacing: -0.5px;
-  color: var(--fg);
+  color: var(--accents-1);
 }
 
 /* Box sizing rules */
@@ -91,8 +91,7 @@ h1,
 h2,
 h3,
 h4 {
-  margin-top: var(--flow-mid);
-  margin-bottom: var(--flow-space);
+  margin: 0;
 }
 
 p {
@@ -115,6 +114,9 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
+a:hover {
+  cursor: pointer;
+}
 
 /* Make images easier to work with */
 img {
@@ -129,8 +131,8 @@ select {
   font: inherit;
 }
 ::selection {
-  background-color: var(--fg);
-  color: var(--bg);
+  background-color: var(--bg);
+  color: var(--fg);
 }
 time {
   text-transform: uppercase;
@@ -156,21 +158,6 @@ blockquote {
   border-left: 0.3rem solid var(--foxtrot);
 }
 
-/* ------- Code --------- */
-
-pre {
-  max-width: 100%;
-  background: var(--accents-2);
-  overflow: auto;
-  border-radius: var(--radius);
-  padding: 1rem;
-  font-size: 0.874rem;
-  border: 1px solid var(--foxtrot);
-}
-code {
-  color: var(--fg);
-}
-
 /* ------ Responsive Type ---------- */
 
 @media (min-width: 640px) {
@@ -193,24 +180,18 @@ code {
     font-size: 20px;
   }
 }
-.container {
-  margin: 0 auto;
-  padding: var(--flow-space) var(--flow-space);
-  max-width: 42rem;
-}
-
 .alpha-btn {
   white-space: nowrap;
   display: inline-block;
   height: 40px;
   line-height: 40px;
   padding: 0 14px;
-  background: var(--charlie);
+  background: var(--alpha);
   border-radius: 4px;
   font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.025em;
-  color: var(--bg);
+  color: var(--fg);
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
@@ -218,7 +199,8 @@ code {
 }
 .alpha-btn:hover {
   transform: translateY(-1px);
-  background: var(--charlie-light);
+  background: var(--alpha-light);
+  cursor: pointer;
 }
 .bravo-btn {
   background: var(--echo);
@@ -226,4 +208,50 @@ code {
 }
 .bravo-btn:hover {
   background: var(--echo-light);
+}
+
+/* Layout */
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 100%;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  padding: var(--flow-mid);
+  max-width: 90rem;
+}
+
+/* Events */
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* Nav */
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-list-item {
+  padding-left: var(--flow-space);
+}
+
+/* Header */
+
+.header-wrapper {
+  width: 100%;
+  height: 400px;
+  background-image: url('/concert.jpg');
+  background-size: cover;
+  background-position: right center;
 }
