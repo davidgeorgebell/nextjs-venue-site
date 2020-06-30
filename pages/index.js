@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { Nav } from '../components/Nav';
 
 import { CustomButton } from '../components/CustomButton';
+import { getAllEvents } from '../lib/eventsInfo';
+import Layout from '../components/Layout';
 
 const AIRTABLE_KEY = process.env.AIRTABLE_KEY;
 
 export default function Home({ events }) {
   return (
-    <div className='container'>
+    <Layout>
       <Head>
         <title>The Yardies</title>
         <link rel='icon' href='/favicon.ico' />
@@ -22,14 +24,17 @@ export default function Home({ events }) {
           <div className='events'>
             <h3>Upcoming Events</h3>
             {events.records.map((event, index) => (
-              <Link href='events/[id]' as={`/events/${event.id}`}>
-                <a>
-                  <img key={index} src={event.fields.Image[0].url} />
+              <Link href='event/[id]' as={`/event/${event.id}`}>
+                <a key={index}>
+                  <img src={event.fields.Image[0].url} />
                 </a>
               </Link>
             ))}
-
-            <CustomButton>See All Upcoming Events</CustomButton>
+            <Link href='/events'>
+              <a>
+                <CustomButton>See All Upcoming Events</CustomButton>
+              </a>
+            </Link>
           </div>
         </main>
 
@@ -43,21 +48,11 @@ export default function Home({ events }) {
           </a>
         </footer> */}
       </div>
-    </div>
+    </Layout>
   );
 }
 export async function getStaticProps() {
-  const res = await fetch(
-    `https://api.airtable.com/v0/app9bv9UvKjThupFL/Events`,
-    {
-      method: 'get',
-      headers: {
-        Authorization: `Bearer ${AIRTABLE_KEY}`,
-      },
-    }
-  );
-
-  const events = await res.json();
+  const events = await getAllEvents();
 
   return {
     props: {
