@@ -1,17 +1,24 @@
 import React from 'react';
 
 import { formatDate } from '../../utils/formatDate';
+import Layout from '../../components/Layout';
 
 const AIRTABLE_KEY = process.env.AIRTABLE_KEY;
 
 export default function Event({ event }) {
   return (
-    <div>
-      <h1>{event.fields.Name}</h1>
-      <time>{formatDate(event.fields.Date)}</time>
-      <p>{event.fields.Notes}</p>
-      <img src={event.fields.Image[0].url} alt={event.fields.Name} />
-    </div>
+    <Layout>
+      <div className='content-wrapper'>
+        <h1 className='event-title'>{event.fields.Name}</h1>
+        <img
+          className='event-image'
+          src={event.fields.Image[0].url}
+          alt={event.fields.Name}
+        />
+        <time>{formatDate(event.fields.Date)}</time>
+        <p>{event.fields.Notes}</p>
+      </div>
+    </Layout>
   );
 }
 export async function getStaticPaths() {

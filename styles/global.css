@@ -25,11 +25,12 @@
   --charlie: #50e3c2;
   --charlie-light: #79ffe1;
   --charlie-dark: #29bc9b;
-  --delta: #f81ce5;
-  --echo: #7928ca;
-  --echo-light: #8a63d2;
-  --echo-dark: #4c2889;
+  --delta: #7928ca;
+  --delta-light: #8a63d2;
+  --delta-dark: #4c2889;
+  --echo: #f81ce5;
   --foxtrot: #ff0080;
+  --golf: #eb367f;
   --radius: 8px;
   --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
@@ -110,12 +111,13 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 a {
-  color: var(--foxtrot);
+  color: var(--delta);
   text-decoration: none;
   font-weight: bold;
 }
 a:hover {
   cursor: pointer;
+  color: var(--delta-dark);
 }
 
 /* Make images easier to work with */
@@ -136,7 +138,9 @@ select {
 }
 time {
   text-transform: uppercase;
-  font-size: 0.7em;
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--foxtrot);
 }
 hr {
   margin: var(--flow-mid) 0;
@@ -186,7 +190,7 @@ blockquote {
   height: 40px;
   line-height: 40px;
   padding: 0 14px;
-  background: var(--alpha);
+  background: var(--delta);
   border-radius: 4px;
   font-size: 0.8em;
   font-weight: 600;
@@ -199,7 +203,7 @@ blockquote {
 }
 .alpha-btn:hover {
   transform: translateY(-1px);
-  background: var(--alpha-light);
+  background: var(--delta-light);
   cursor: pointer;
 }
 .bravo-btn {
@@ -278,4 +282,21 @@ blockquote {
   font-size: 5vw;
   padding: 0 var(--flow-space);
   font-weight: 600;
+}
+
+/* Events Page */
+
+.events-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+/* Event */
+
+.event-image {
+  width: 500px;
+}
+.event-title {
+  font-size: 5vw;
 }
