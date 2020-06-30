@@ -1,6 +1,9 @@
 import Head from 'next/head';
+import Link from 'next/link';
+
 import { Nav } from '../components/Nav';
-import { Events } from '../components/Events';
+
+import { CustomButton } from '../components/CustomButton';
 
 const AIRTABLE_KEY = process.env.AIRTABLE_KEY;
 
@@ -16,7 +19,18 @@ export default function Home({ events }) {
       </header>
       <div>
         <main>
-          <Events events={events} />
+          <div className='events'>
+            <h3>Upcoming Events</h3>
+            {events.records.map((event, index) => (
+              <Link href='events/[id]' as={`/events/${event.id}`}>
+                <a>
+                  <img key={index} src={event.fields.Image[0].url} />
+                </a>
+              </Link>
+            ))}
+
+            <CustomButton>See All Upcoming Events</CustomButton>
+          </div>
         </main>
 
         {/* 
@@ -44,8 +58,6 @@ export async function getStaticProps() {
   );
 
   const events = await res.json();
-
-  console.log(events);
 
   return {
     props: {
