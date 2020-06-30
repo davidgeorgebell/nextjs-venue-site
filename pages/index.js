@@ -18,13 +18,15 @@ export default function Home({ events }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <header>
-        <div className='header-wrapper'></div>
+        <div className='header-wrapper'>
+          <h1 className='site-title'>Music Club | Grimsby, England </h1>
+        </div>
       </header>
       <Nav />
       <div>
         <main>
           <div className='events content-wrapper'>
-            <h3>Upcoming Events</h3>
+            <h2 className='title center'>Upcoming Events</h2>
             <div className='events-grid'>
               {events.records.map((event, index) => (
                 <Link href='event/[id]' as={`/event/${event.id}`}>
@@ -36,11 +38,13 @@ export default function Home({ events }) {
                 </Link>
               ))}
             </div>
-            <Link href='/events'>
-              <a>
-                <CustomButton>See All Upcoming Events</CustomButton>
-              </a>
-            </Link>
+            <div className='center'>
+              <Link href='/events'>
+                <a>
+                  <CustomButton>See More</CustomButton>
+                </a>
+              </Link>
+            </div>
           </div>
         </main>
 
