@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { Nav } from '../components/Nav';
 
 import { CustomButton } from '../components/CustomButton';
-import { getAllEvents } from '../lib/eventsInfo';
+import { getAllEvents, getGalleryImages } from '../lib/airtableData';
 import Layout from '../components/Layout';
 import { formatDate } from '../utils/formatDate';
 
 const AIRTABLE_KEY = process.env.AIRTABLE_KEY;
 
-export default function Home({ events }) {
+export default function Home({ events, galleryImages }) {
   return (
     <>
       <header>
@@ -30,10 +30,13 @@ export default function Home({ events }) {
             <div className='events content-wrapper'>
               <h2 className='title center'>Upcoming Events</h2>
               <div className='events-grid'>
-                {events.records.map((event, index) => (
+                {events.map((event, index) => (
                   <Link key={index} href='event/[id]' as={`/event/${event.id}`}>
                     <a>
-                      <img src={event.fields.Image[0].url} />
+                      <img
+                        src={event.fields.Image[0].url}
+                        alt={event.fields.Name}
+                      />
                       <h3>
                         {event.fields.Name}{' '}
                         <time>{formatDate(event.fields.Date)}</time>
@@ -49,6 +52,20 @@ export default function Home({ events }) {
                   </a>
                 </Link>
               </div>
+            </div>
+            <div className='gallery-wrapper content-wrapper'>
+              <h2 className='title center'>Gallery</h2>
+              <ul className='gallery-list'>
+                {galleryImages.records.map((image, index) => (
+                  <li key={index} className='gallery-item'>
+                    <img
+                      className='gallery-image'
+                      src={image.fields.Image[0].url}
+                      alt={image.fields.Title}
+                    />
+                  </li>
+                ))}
+              </ul>
             </div>
           </main>
 
@@ -68,10 +85,12 @@ export default function Home({ events }) {
 }
 export async function getStaticProps() {
   const events = await getAllEvents();
+  const galleryImages = await getGalleryImages();
 
   return {
     props: {
       events,
+      galleryImages,
     },
   };
 }

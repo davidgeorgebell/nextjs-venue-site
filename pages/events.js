@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { getAllEvents } from '../lib/eventsInfo';
+import { getAllEvents } from '../lib/airtableData';
 import { CustomButton } from '../components/CustomButton';
 import Layout from '../components/Layout';
 
