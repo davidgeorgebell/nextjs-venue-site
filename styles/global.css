@@ -265,7 +265,7 @@ blockquote {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-bottom: var(--flow-space);
+  margin-bottom: var(--flow-large);
 }
 
 /* Nav */
@@ -337,4 +337,11 @@ blockquote {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
+}
+
+/* About | Contact */
+
+.page-text-wrapper {
+  max-width: 768px;
+  margin: 0 auto;
 }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const AnimationY = ({ children }) => {
+export const AnimationY = ({ children, trans }) => {
   return (
     <motion.div
       initial={{ y: 100, opacity: 0.2 }}
