@@ -9,14 +9,18 @@ export default function Event({ event }) {
   return (
     <Layout>
       <div className='content-wrapper'>
-        <h1 className='event-title'>{event.fields.Name}</h1>
-        <img
-          className='event-image'
-          src={event.fields.Image[0].url}
-          alt={event.fields.Name}
-        />
-        <time>{formatDate(event.fields.Date)}</time>
-        <p>{event.fields.Notes}</p>
+        <div className='event-wrapper'>
+          <img
+            className='event-image'
+            src={event.fields.Image[0].url}
+            alt={event.fields.Name}
+          />
+          <div className='event-text'>
+            <h1 className='event-title'>{event.fields.Name}</h1>
+            <time>{formatDate(event.fields.Date)}</time>
+            <p>{event.fields.Notes}</p>
+          </div>
+        </div>
       </div>
     </Layout>
   );

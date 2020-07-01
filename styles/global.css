@@ -111,13 +111,14 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 a {
-  color: var(--delta);
+  color: var(--foxtrot);
   text-decoration: none;
   font-weight: bold;
 }
 a:hover {
   cursor: pointer;
-  color: var(--delta-dark);
+
+  text-decoration: underline;
 }
 
 /* Make images easier to work with */
@@ -294,9 +295,13 @@ blockquote {
 
 /* Event */
 
-.event-image {
-  width: 500px;
+.event-wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2em;
 }
+
 .event-title {
   font-size: 5vw;
 }

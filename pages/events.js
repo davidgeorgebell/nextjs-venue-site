@@ -9,12 +9,13 @@ export default function Events({ events }) {
     <Layout>
       <div className='content-wrapper'>
         <h1 className='title center'>Upcoming events</h1>
+
         <div className='events-page-grid'>
           {events.records.map((event, index) => (
             <div key={index}>
-              <h2>{event.fields.Name}</h2>
               <Link href='event/[id]' as={`/event/${event.id}`}>
                 <a key={index}>
+                  <h2 className='event-title'>{event.fields.Name}</h2>
                   <img src={event.fields.Image[0].url} />
                 </a>
               </Link>

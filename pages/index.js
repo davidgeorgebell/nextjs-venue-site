@@ -31,11 +31,13 @@ export default function Home({ events }) {
               <h2 className='title center'>Upcoming Events</h2>
               <div className='events-grid'>
                 {events.records.map((event, index) => (
-                  <Link href='event/[id]' as={`/event/${event.id}`}>
-                    <a key={index}>
+                  <Link key={index} href='event/[id]' as={`/event/${event.id}`}>
+                    <a>
                       <img src={event.fields.Image[0].url} />
-                      <time>{formatDate(event.fields.Date)}</time>
-                      <h3>{event.fields.Name}</h3>
+                      <h3>
+                        {event.fields.Name}{' '}
+                        <time>{formatDate(event.fields.Date)}</time>
+                      </h3>
                     </a>
                   </Link>
                 ))}
