@@ -17,14 +17,13 @@ export default function Events({ events }) {
             <div key={index}>
               <Link href='event/[id]' as={`/event/${event.id}`}>
                 <a key={index}>
-                  <h2 className='event-title'>{event.fields.Name}</h2>
                   <div className='grid-image-wrapper'>
                     <img
                       className='grid-image'
                       src={event.fields.Image[0].url}
-                      å
                     />
                   </div>
+                  <h2 className='title'>{event.fields.Name}</h2>
                 </a>
               </Link>
             </div>

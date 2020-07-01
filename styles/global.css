@@ -318,6 +318,14 @@ blockquote {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 2em;
 }
+.event-text {
+  align-self: center;
+  justify-self: center;
+}
+.event-image {
+  align-self: stretch;
+  justify-self: stretch;
+}
 
 .event-title {
   font-size: 5vw;
