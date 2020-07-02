@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getAllEvents } from '../lib/airtableData';
 import Layout from '../components/Layout';
 import { AnimationX } from '../components/AnimationX';
+import { HoverAnimation } from '../components/HoverAnimation';
 
 export default function Events({ events }) {
   return (
@@ -16,15 +17,17 @@ export default function Events({ events }) {
           {events.map((event, index) => (
             <div key={index}>
               <Link href='event/[id]' as={`/event/${event.id}`}>
-                <a key={index}>
-                  <div className='grid-image-wrapper'>
-                    <img
-                      className='grid-image'
-                      src={event.fields.Image[0].url}
-                    />
-                  </div>
-                  <h2 className='title'>{event.fields.Name}</h2>
-                </a>
+                <HoverAnimation>
+                  <a key={index}>
+                    <div className='grid-image-wrapper'>
+                      <img
+                        className='grid-image'
+                        src={event.fields.Image[0].url}
+                      />
+                    </div>
+                    <h2 className='title'>{event.fields.Name}</h2>
+                  </a>
+                </HoverAnimation>
               </Link>
             </div>
           ))}

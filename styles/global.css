@@ -124,6 +124,7 @@ a:hover {
 /* Make images easier to work with */
 img {
   max-width: 100%;
+  border-radius: var(--radius);
   display: block;
 }
 /* Inherit fonts for inputs and buttons */
@@ -191,12 +192,12 @@ blockquote {
   height: 40px;
   line-height: 40px;
   padding: 0 14px;
-  background: var(--delta);
+  background: var(--charlie);
   border-radius: 4px;
   font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.025em;
-  color: var(--fg);
+  color: var(--bg);
   text-decoration: none;
   -webkit-transition: all 0.15s ease;
   transition: all 0.15s ease;
@@ -204,7 +205,7 @@ blockquote {
 }
 .alpha-btn:hover {
   transform: translateY(-1px);
-  background: var(--delta-light);
+  background: var(--charlie-light);
   cursor: pointer;
 }
 .bravo-btn {
@@ -273,6 +274,7 @@ blockquote {
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: var(--flow-large);
 }
 .nav-list {
   display: flex;

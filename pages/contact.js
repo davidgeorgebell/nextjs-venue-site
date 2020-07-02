@@ -24,15 +24,13 @@ export default function contact() {
             </p>
           </AnimationY>
           <p>
-            <AnimationX>
-              You can find out more about me by visiting portfolio{' '}
-              <a
-                href='https://davidbell.co'
-                target='_blank'
-                rel='noopener noreferrer'>
-                davidbell.co
-              </a>
-            </AnimationX>
+            You can find out more about me by visiting portfolio{' '}
+            <a
+              href='https://davidbell.co'
+              target='_blank'
+              rel='noopener noreferrer'>
+              davidbell.co
+            </a>
           </p>
         </div>
       </div>

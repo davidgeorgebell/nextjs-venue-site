@@ -2,6 +2,7 @@ import React from 'react';
 
 import { formatDate } from '../../utils/formatDate';
 import Layout from '../../components/Layout';
+import { AnimationY } from '../../components/AnimationY';
 
 const AIRTABLE_KEY = process.env.AIRTABLE_KEY;
 
@@ -10,11 +11,13 @@ export default function Event({ event }) {
     <Layout>
       <div className='content-wrapper'>
         <div className='event-wrapper'>
-          <img
-            className='event-image'
-            src={event.fields.Image[0].url}
-            alt={event.fields.Name}
-          />
+          <AnimationY>
+            <img
+              className='event-image'
+              src={event.fields.Image[0].url}
+              alt={event.fields.Name}
+            />
+          </AnimationY>
           <div className='event-text'>
             <h1 className='event-title'>{event.fields.Name}</h1>
             <time>{formatDate(event.fields.Date)}</time>

@@ -27,7 +27,7 @@ export default function Home({ events, galleryImages }) {
       <Layout>
         <Head>
           <title>Music Club</title>
-          <link rel='icon' href='/favicon.ico' />
+          <link rel='icon' href='/logo.png' />
         </Head>
 
         <div>
@@ -44,19 +44,19 @@ export default function Home({ events, galleryImages }) {
                       key={index}
                       href='event/[id]'
                       as={`/event/${event.id}`}>
-                      <a>
-                        <div className='grid-image-wrapper'>
-                          <img
-                            className='grid-image'
-                            src={event.fields.Image[0].url}
-                            alt={event.fields.Name}
-                          />
-                        </div>
-                        <HoverAnimation>
+                      <HoverAnimation>
+                        <a>
+                          <div className='grid-image-wrapper'>
+                            <img
+                              className='grid-image'
+                              src={event.fields.Image[0].url}
+                              alt={event.fields.Name}
+                            />
+                          </div>
                           <h3 className='title'>{event.fields.Name}</h3>
-                        </HoverAnimation>
-                        {/* <time>{formatDate(event.fields.Date)}</time> */}
-                      </a>
+                          {/* <time>{formatDate(event.fields.Date)}</time> */}
+                        </a>
+                      </HoverAnimation>
                     </Link>
                   ))
                   .splice(0, 3)}
