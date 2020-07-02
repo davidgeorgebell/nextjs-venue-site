@@ -27,7 +27,7 @@ export default function Home({ events, galleryImages }) {
       <Layout>
         <Head>
           <title>Music Club</title>
-          <link rel='icon' href='/logo.png' />
+          <link rel='icon' href='/logo.svg' />
         </Head>
 
         <div>
